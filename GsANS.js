@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const devices = require('puppeteer/DeviceDescriptors');
+require('dotenv').config();
 // const path = require('path');
 // const screenshotPath = path.resolve('./out/screenshot/') + '/';
 process.setMaxListeners(Infinity);
@@ -33,7 +34,8 @@ try {
         await page.goto('https://www.facebook.com/groups/183545349248040/');
         // await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
         await page.waitFor(2000);
-        await page.type('input[name="email"]', 'earthfreedom@hraesvelgr.com');
+        await page.type('input[name="email"]', process.env.MAILADDRESS);
+        await page.type('input[name="pass"]', process.env.PASS);
         // await page.click('#age_ok_btn');
         //age_ok_btn
 
