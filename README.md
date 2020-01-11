@@ -26,7 +26,7 @@ node GsANS.js
 
 ## .env を作る
 ```
-# パスワードとか
+# パスワードとかの環境変数ファイル
 MAILADDRESS=facebookのメールアドレス
 PASS=パスワード
 ```
