@@ -36,8 +36,7 @@ try {
         await page.waitFor(2000);
         await page.type('input[name="email"]', process.env.MAILADDRESS);
         await page.type('input[name="pass"]', process.env.PASS);
-        // await page.click('#age_ok_btn');
-        //age_ok_btn
+        await page.click('button[name="login"]');
 
 
         // await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
@@ -51,7 +50,7 @@ try {
         // setTimeout(2000)
         process.on('unhandledRejection', console.dir);
         await page.waitFor(60000);
-        await browser.close();
+        //await browser.close();
     })();
 
 } catch (err) {
