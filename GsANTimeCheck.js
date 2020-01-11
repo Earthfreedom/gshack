@@ -44,9 +44,15 @@ try {
         await page.waitFor(1000);
         await page.click('#u_0_5');
         await page.waitFor(20000);
-        await page.click('#u_0_au');
-        await page.waitFor(5000);
-        await page.type('input[name="message"]', "ハッカソンの為のテスト投稿です！欺して申し訳ないですが無視してください！\n1/10 (金）【本日のオールナイト】\n利用される方は「21:00まで」にコメントください！\n①入室時間（入室最終23:30まで）\n②退室予定時刻\n③本日やることや目標");
+        // await page.click('#u_0_4g');
+        await page.mouse.click(692.5, 780.859375)
+        await page.waitFor(2000);
+        await page.keyboard.sendCharacter('test投稿：無視してください！');
+        await page.waitFor(10000);
+        await page.mouse.click(952.5, 5)
+        // await page.$eval('form-selector', form => form.submit());
+        // await page.waitFor(5000);
+        // await page.type('input[name="message"]', "ハッカソンの為のテスト投稿です！欺して申し訳ないですが無視してください！\n1/10 (金）【本日のオールナイト】\n利用される方は「21:00まで」にコメントください！\n①入室時間（入室最終23:30まで）\n②退室予定時刻\n③本日やることや目標");
 
 
         //age_ok_btn
