@@ -46,6 +46,7 @@ try {
         await page.waitFor(2000);
         await page.type('input[name="email"]', process.env.MAILADDRESS);
         await page.type('input[name="pass"]', process.env.PASS);
+
         await page.waitFor(1000);
         await page.click('#u_0_5');
         await page.waitFor(15000);
@@ -56,7 +57,12 @@ try {
         await page.mouse.click(8, 488)
 
         //age_ok_btn
-
+        await page.waitFor(3000);
+        await SwitchToAlert.Dismiss();
+        await page.waitFor(3000);
+        await page.click('._5xu4');
+        await page.waitFor(3000);
+        await page.type('textarea[id="uniqid_1"]')
 
         // await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
         // await page.click('#ios_view_btn');
@@ -68,6 +74,7 @@ try {
         // await page.waitFor(10000);
         // setTimeout(2000)
         process.on('unhandledRejection', console.dir);
+
         // await page.waitFor(60000);
         // await browser.close();
     })();
