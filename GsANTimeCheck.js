@@ -1,10 +1,11 @@
 const puppeteer = require('puppeteer');
 const devices = require('puppeteer/DeviceDescriptors');
 require('dotenv').config();
+var array = require('./GetData');
 // const path = require('path');
 // const screenshotPath = path.resolve('./out/screenshot/') + '/';
 process.setMaxListeners(Infinity);
-
+console.log(array);
 
 try {
 
@@ -47,7 +48,7 @@ try {
         // await page.click('#u_0_4g');
         await page.mouse.click(692.5, 780.859375)
         await page.waitFor(2000);
-        await page.keyboard.sendCharacter('test投稿：無視してください！');
+        await page.keyboard.sendCharacter(`${array[0].name}, ${array[0].start}, ${array[0].end}`);
         await page.waitFor(10000);
         await page.mouse.click(952.5, 5)
         // await page.$eval('form-selector', form => form.submit());

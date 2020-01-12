@@ -95,7 +95,8 @@ function listMajors(auth) {
             array.push(obj);
         });
         console.log(array);
-        dataCheck(array);
+        module.exports = array;
+        //dataCheck(array);
     } else {
         console.log('No data found.');
     }
