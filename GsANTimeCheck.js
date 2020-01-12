@@ -1,11 +1,12 @@
 const puppeteer = require('puppeteer');
 const devices = require('puppeteer/DeviceDescriptors');
 require('dotenv').config();
-var array = require('./GetData');
+var getDataname = require('./GetData.js');
 // const path = require('path');
 // const screenshotPath = path.resolve('./out/screenshot/') + '/';
 process.setMaxListeners(Infinity);
-console.log(array);
+console.log(getDataname.getData);
+console.log(array)
 
 try {
 
