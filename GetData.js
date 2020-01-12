@@ -1,7 +1,7 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
-
+require('dotenv').config();
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 // The file token.json stores the user's access and refresh tokens, and is
@@ -76,8 +76,8 @@ function listMajors(auth) {
     let obj = {};
     let array = [];
     sheets.spreadsheets.values.get({
-        spreadsheetId: '1Me9uOf7xmTiYUcDNvDTLzx_RkrYf0kshG60se0h7x2A',
-        range: 'testdata!A2:E',
+        spreadsheetId: env.SHEETID,
+        range: env.DATARANGE,
     }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
