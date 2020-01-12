@@ -44,6 +44,7 @@ try {
         await page.click('._5xu4');
         await page.waitFor(3000);
         await page.type('textarea[id="uniqid_1"]')
+
         // await page.waitForNavigation({ waitUntil: 'domcontentloaded' });
         // await page.click('#ios_view_btn');
 
