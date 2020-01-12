@@ -30,3 +30,8 @@ node GsANS.js
 MAILADDRESS=facebookのメールアドレス
 PASS=パスワード
 ```
+
+## 座標取得用JS
+```
+var test = document.querySelector("._5s61").getBoundingClientRect()
+```

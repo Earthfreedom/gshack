@@ -63,7 +63,7 @@ function getNewToken(oAuth2Client, callback) {
         });
         callback(oAuth2Client);
     });
-    );
+　});
 }
 
 /**
