@@ -77,8 +77,8 @@ function listMajors(auth) {
     let obj = {};
     let array = [];
     sheets.spreadsheets.values.get({
-        spreadsheetId: env.SHEETID,
-        range: env.DATARANGE,
+        spreadsheetId: "1NrZQf5w6EZQa5LN_KuZB5MgO9jpFf9uClqZfAq_QYxk",
+        range: "フォームの回答 1!A2:E"
     }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
@@ -92,9 +92,9 @@ function listMajors(auth) {
                 gga: row[4],
                 timestamp: row[0]
             };
-        array.push(obj);
+            array.push(obj);
         });
-      //console.log(array);
+        console.log(array);
         dataCheck(array);
     } else {
         console.log('No data found.');
