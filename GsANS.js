@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const devices = require('puppeteer/DeviceDescriptors');
+require('date-utils');
 require('dotenv').config();
 // const path = require('path');
 // const screenshotPath = path.resolve('./out/screenshot/') + '/';
@@ -30,7 +31,11 @@ try {
             downloadThroughput: 4 * 1024 * 1024 / 8, // 4Mbps
             uploadThroughput: 2 * 1024 * 1024 / 8 // 2Mbps
         });
-
+        var dt = new Date();
+        var formatted = dt.toFormat("YYYY年MM月DD日");
+        dateT = ["日", "月", "火", "水", "木", "金", "土"];
+        var day = dateT[dt.getDay()];
+        console.log(formatted, day);
 
         // await page.setJavaScriptEnabled(false)
         await page.emulate(devices['iPad Pro landscape']);
@@ -43,11 +48,12 @@ try {
         await page.type('input[name="pass"]', process.env.PASS);
         await page.waitFor(1000);
         await page.click('#u_0_5');
-        await page.waitFor(20000);
+        await page.waitFor(15000);
         await page.click('#u_0_au');
-        await page.waitFor(5000);
-        await page.type('input[name="message"]', "ハッカソンの為のテスト投稿です！欺して申し訳ないですが無視してください！\n1/10 (金）【本日のオールナイト】\n利用される方は「21:00まで」にコメントください！\n①入室時間（入室最終23:30まで）\n②退室予定時刻\n③本日やることや目標");
-
+        await page.waitFor(3000);
+        await page.type('input[name="message"]', `ハッカソンの為のテスト投稿です！欺して申し訳ないですが無視してください！\n${formatted} (${day})【本日のオールナイト】\n利用される方は「21:00まで」に下記URLよりフォームへ入力してください。\n8人以上になったら抽選を行います。\n抽選時GGA直前の人はフォームにてGGA直前のチェックを入れて貰うと優先されます。\nURL：https://docs.google.com/forms/d/1l6zM7ahAPg4lWnCer5bFvmxZbzFriIKB6jHMbTqi808/viewform?edit_requested=true`);
+        await page.waitFor(2000);
+        await page.mouse.click(8, 488)
 
         //age_ok_btn
 
